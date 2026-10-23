@@ -254,6 +254,54 @@
   .pstep h3{font-size:15px;margin-bottom:6px}
   .pstep p{font-size:13.5px;color:var(--muted)}
 
+  /* ---------- Processo de implantação ---------- */
+  .impl-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .impl-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:24px;
+    box-shadow:var(--shadow);
+    position:relative;
+  }
+  .impl-card::before{
+    content:attr(data-step);
+    position:absolute;
+    top:-12px;
+    left:20px;
+    background:var(--green);
+    color:#fff;
+    font-family:'Sora',sans-serif;
+    font-weight:800;
+    font-size:13px;
+    padding:4px 12px;
+    border-radius:999px;
+    letter-spacing:.05em;
+  }
+  .impl-card h3{
+    font-size:16px;
+    margin-bottom:8px;
+    margin-top:8px;
+  }
+  .impl-card p{
+    font-size:14px;
+    color:var(--muted);
+    margin-bottom:0;
+  }
+  .impl-screen{
+    display:inline-block;
+    background:rgba(34,197,94,.08);
+    border:1px solid rgba(34,197,94,.25);
+    color:var(--green-dark);
+    font-weight:700;
+    font-size:11px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    padding:4px 10px;
+    border-radius:6px;
+    margin-top:12px;
+  }
+
   /* ---------- Encerramento ---------- */
   .closing{text-align:center;padding:56px 40px}
   .closing .logo{margin:0 auto 30px;height:52px}
@@ -276,6 +324,7 @@
     .grid-4{grid-template-columns:repeat(2,1fr)}
     .grid-3{grid-template-columns:repeat(2,1fr)}
     .steps5{grid-template-columns:repeat(2,1fr)}
+    .impl-grid{grid-template-columns:1fr}
     .cover-meta{grid-template-columns:1fr}
   }
   @media (max-width:620px){
@@ -294,7 +343,7 @@
     .cover{min-height:auto;break-after:page;padding:0}
     section{margin-top:40px}
     .print-break{break-before:page}
-    .card,.step,.msg,.pstep,.price-box,.callout,.chat{box-shadow:none;break-inside:avoid}
+    .card,.step,.msg,.pstep,.price-box,.callout,.chat,.impl-card{box-shadow:none;break-inside:avoid}
     .navy{break-inside:avoid}
     h2{break-after:avoid}
     table{min-width:0;font-size:10.5px}
@@ -539,22 +588,22 @@
       <div class="price-row">
         <div class="price-box">
           <div class="meta-label">Implantação · pagamento único</div>
-          <div class="val">R$ 2.600,00</div>
+          <div class="val">R$ 2.100,00</div>
         </div>
         <div class="price-box">
           <div class="meta-label">Mensalidade</div>
-          <div class="val">R$ 1.597,00<small>/mês</small></div>
+          <div class="val">R$ 947,00<small>/mês</small></div>
         </div>
         <div class="price-box">
           <div class="meta-label">Pedidos inclusos</div>
-          <div class="val">1.100<small>/mês</small></div>
+          <div class="val">500<small>/mês</small></div>
         </div>
         <div class="price-box">
           <div class="meta-label">Pedido excedente</div>
-          <div class="val">R$ 0,49<small>/pedido</small></div>
+          <div class="val">R$ 0,90<small>/pedido</small></div>
         </div>
       </div>
-      <p class="tiny" style="margin-top:12px">A franquia de 1.100 pedidos mensais é compartilhada entre as duas lojas da operação — não é uma franquia por loja. Pedidos que ultrapassarem esse volume são cobrados a R$ 0,49 por pedido. Valores comerciais informados para este projeto.</p>
+      <p class="tiny" style="margin-top:12px">A franquia de 500 pedidos mensais é compartilhada entre as duas lojas da operação — não é uma franquia por loja. Pedidos que ultrapassarem esse volume são cobrados a R$ 0,90 por pedido. Valores comerciais informados para este projeto.</p>
     </div>
   </section>
 
@@ -683,23 +732,23 @@
         <div class="price-row">
           <div class="price-box">
             <div class="meta-label">Implantação · pagamento único</div>
-            <div class="val">R$ 2.600,00</div>
+            <div class="val">R$ 2.100,00</div>
           </div>
           <div class="price-box">
             <div class="meta-label">Mensalidade</div>
-            <div class="val">R$ 1.597,00<small>/mês</small></div>
+            <div class="val">R$ 947,00<small>/mês</small></div>
           </div>
           <div class="price-box">
             <div class="meta-label">Pedidos inclusos</div>
-            <div class="val">1.100<small>/mês</small></div>
+            <div class="val">500<small>/mês</small></div>
           </div>
           <div class="price-box">
             <div class="meta-label">Pedido excedente</div>
-            <div class="val">R$ 0,49<small>/pedido</small></div>
+            <div class="val">R$ 0,90<small>/pedido</small></div>
           </div>
         </div>
         <p class="tiny" style="margin-top:12px">
-          A franquia de 1.100 pedidos mensais é compartilhada entre as duas lojas da operação. Não se presume que o
+          A franquia de 500 pedidos mensais é compartilhada entre as duas lojas da operação. Não se presume que o
           valor contemple automaticamente todos os CNPJs além das duas lojas informadas.
         </p>
       </div>
@@ -709,7 +758,7 @@
       <h3 style="font-size:16px">Custos variáveis do catálogo</h3>
       <ul class="dots small muted">
         <li>O consumo de tokens de IA pode ser cobrado separadamente, conforme as condições do produto.</li>
-        <li>Pedidos que excederem a franquia mensal de 1.100 são cobrados a R$ 0,49 por pedido, somados entre as duas lojas.</li>
+        <li>Pedidos que excederem a franquia mensal de 500 são cobrados a R$ 0,90 por pedido, somados entre as duas lojas.</li>
         <li>A licença do sistema de gestão (ERP) continua sendo uma relação comercial separada com o fornecedor.</li>
       </ul>
       <p class="tiny" style="margin-top:10px">
@@ -720,9 +769,69 @@
     </div>
   </section>
 
-  <!-- ==================== 07 · LIMITAÇÕES E PREMISSAS ==================== -->
+  <!-- ==================== 07 · PROCESSO DE IMPLANTAÇÃO ==================== -->
+  <section id="implantacao" class="print-break">
+    <span class="kicker">07 · Processo de implantação</span>
+    <h2>Pós-venda · Implantação passo a passo</h2>
+    <p class="lead">
+      Sete etapas, cada uma com a tela do painel onde ela acontece. Use isso para alinhar expectativa de prazo já na assinatura.
+    </p>
+
+    <div class="impl-grid" style="margin-top:26px">
+      <div class="impl-card" data-step="1">
+        <h3>Contrato e cadastro</h3>
+        <p>Organização, loja ou lojas, usuários e permissões. É o que habilita o filtro de escopo no painel.</p>
+        <span class="impl-screen">Tela: Minha loja</span>
+      </div>
+
+      <div class="impl-card" data-step="2">
+        <h3>Integração com o ERP</h3>
+        <p>Conexão com o Alpha7: produtos, EAN, preços e estoque passam a sincronizar automaticamente, e o pedido volta para o sistema.</p>
+        <span class="impl-screen">Tela: Produtos</span>
+      </div>
+
+      <div class="impl-card" data-step="3">
+        <h3>Identidade visual</h3>
+        <p>Logo, cores e nome da loja aplicados ao catálogo do cliente, para o cliente reconhecer a farmácia dele.</p>
+        <span class="impl-screen">Tela: Guia visual</span>
+      </div>
+
+      <div class="impl-card" data-step="4">
+        <h3>Vitrine e categorias</h3>
+        <p>Banners de campanha, bloco de recomendados e organização das categorias. É o que transforma uma busca em três itens no carrinho.</p>
+        <span class="impl-screen">Tela: Vitrine</span>
+      </div>
+
+      <div class="impl-card" data-step="5">
+        <h3>Canal WhatsApp</h3>
+        <p>Número oficial na Meta e ativação da IA do catálogo. Sem isso o catálogo existe, mas ninguém chega nele.</p>
+        <span class="impl-screen">Tela: Atendimentos</span>
+      </div>
+
+      <div class="impl-card" data-step="6">
+        <h3>Testes de busca</h3>
+        <p>Rodada de perguntas reais para calibrar o agente e o catálogo. Revise o que foi procurado e não teve resultado — são vendas perdidas mapeadas.</p>
+        <span class="impl-screen">Tela: Buscas</span>
+      </div>
+
+      <div class="impl-card" data-step="7" style="grid-column:1/-1">
+        <h3>Go live e rotina diária</h3>
+        <p>Cinco minutos por dia: Pendências → Atendimentos → Visão geral → buscas sem resultado → produtos nos carrinhos.</p>
+        <span class="impl-screen">Tela: Início</span>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:20px">
+      <p class="small muted">
+        <strong style="color:var(--black)">Prazo estimado:</strong> o processo completo de implantação pode ser concluído em aproximadamente
+        <strong style="color:var(--black)">30 dias</strong>, dependendo da velocidade de validação técnica e das aprovações internas.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==================== 08 · LIMITAÇÕES E PREMISSAS ==================== -->
   <section id="limitacoes" class="print-break">
-    <span class="kicker">07 · Limitações e premissas técnicas</span>
+    <span class="kicker">08 · Limitações e premissas técnicas</span>
     <h2>Premissas que orientam a contratação</h2>
     <p class="lead">Pontos apresentados com transparência para que a decisão da Drogagil Sumaré seja tomada com base no escopo real da solução.</p>
 
@@ -758,17 +867,17 @@
         <div class="icon icon-navy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5v8l9 5 9-5V8z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg></div>
         <h3 style="font-size:16px">Franquia de pedidos</h3>
         <p class="small muted">
-          Esta proposta contempla <strong style="color:var(--black)">1.100 pedidos mensais inclusos</strong>, compartilhados entre as duas
+          Esta proposta contempla <strong style="color:var(--black)">500 pedidos mensais inclusos</strong>, compartilhados entre as duas
           lojas da operação — a franquia é conjunta, não individual por loja. Pedidos que ultrapassarem esse volume são
-          cobrados a <strong style="color:var(--black)">R$ 0,49 por pedido excedente</strong>.
+          cobrados a <strong style="color:var(--black)">R$ 0,90 por pedido excedente</strong>.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- ==================== 08 · INVESTIMENTO ==================== -->
+  <!-- ==================== 09 · INVESTIMENTO ==================== -->
   <section id="investimento" class="print-break">
-    <span class="kicker">08 · Investimento</span>
+    <span class="kicker">09 · Investimento</span>
     <h2>Resumo comercial</h2>
 
     <div class="navy" style="margin-top:26px">
@@ -782,7 +891,7 @@
       <ul class="dots small" style="margin-top:14px;color:rgba(255,255,255,.85)">
         <li>A implantação é um pagamento único e contempla a configuração inicial do catálogo.</li>
         <li>A mensalidade é adicional à mensalidade atual da Drogagil Sumaré com a Único Contato.</li>
-        <li>Franquia de 1.100 pedidos mensais compartilhada entre as duas lojas; excedente a R$ 0,49 por pedido.</li>
+        <li>Franquia de 500 pedidos mensais compartilhada entre as duas lojas; excedente a R$ 0,90 por pedido.</li>
         <li>Integração com o sistema de gestão e recursos como pagamento por Pix dependem de validação técnica.</li>
       </ul>
       <p class="tiny" style="margin-top:14px;color:rgba(255,255,255,.6)">
@@ -803,8 +912,8 @@
         <tbody>
           <tr class="rec">
             <td><span class="sol-name">Catálogo Único</span><span class="badge badge-green">Recomendação</span></td>
-            <td><span class="price">R$ 2.600,00<small>pagamento único</small></span></td>
-            <td><span class="price">R$ 1.597,00<small>/mês</small></span></td>
+            <td><span class="price">R$ 2.100,00<small>pagamento único</small></span></td>
+            <td><span class="price">R$ 947,00<small>/mês</small></span></td>
           </tr>
         </tbody>
       </table>
@@ -813,9 +922,9 @@
     <div class="callout" style="margin-top:18px">
       <p class="small muted">
         <strong style="color:var(--black)">Franquia de pedidos:</strong> a proposta contempla
-        <strong style="color:var(--black)">1.100 pedidos mensais inclusos</strong>, compartilhados entre as duas lojas da Drogagil Sumaré
+        <strong style="color:var(--black)">500 pedidos mensais inclusos</strong>, compartilhados entre as duas lojas da Drogagil Sumaré
         (franquia conjunta, não por loja). Pedidos que excederem esse volume são cobrados a
-        <strong style="color:var(--black)">R$ 0,49 por pedido</strong>.
+        <strong style="color:var(--black)">R$ 0,90 por pedido</strong>.
       </p>
     </div>
 
@@ -840,9 +949,9 @@
     </p>
   </section>
 
-  <!-- ==================== 09 · PRÓXIMOS PASSOS ==================== -->
+  <!-- ==================== 10 · PRÓXIMOS PASSOS ==================== -->
   <section id="proximos" class="print-break">
-    <span class="kicker">09 · Próximos passos</span>
+    <span class="kicker">10 · Próximos passos</span>
     <h2>Caminho sugerido para a decisão</h2>
     <p class="lead">Sequência recomendada de trabalho, sem prazos definidos neste documento.</p>
 
@@ -876,7 +985,7 @@
     <p class="tiny" style="margin-top:12px">Prazos de implantação e datas de início serão definidos após a validação de escopo e a formalização comercial.</p>
   </section>
 
-  <!-- ==================== 10 · ENCERRAMENTO ==================== -->
+  <!-- ==================== 11 · ENCERRAMENTO ==================== -->
   <section id="encerramento">
     <div class="navy closing">
       <svg class="logo logo-light" role="img" aria-label="Grupo Único Contato"><use href="#uc-logo"/></svg>
